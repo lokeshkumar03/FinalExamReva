@@ -1,0 +1,21 @@
+name: Retire.js Analysis
+
+on: [push]
+
+jobs:
+  retirejs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Retire.js analysis
+        run: |
+          docker run --rm -v $(pwd):/src hysnsec/retire retire --outputformat json --outputpath /src/retire-output.json
+
+      - name: Upload Retire.js report
+        uses: actions/upload-artifact@v2
+        with:
+          name: retire-report
+          path: retire-output.json
