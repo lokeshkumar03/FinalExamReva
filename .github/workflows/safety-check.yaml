@@ -22,7 +22,7 @@ jobs:
 
       - name: Run safety check
         run: |
-          docker run --rm -v $(pwd):/app hysnsec/safety safety check -r /app/requirements.txt --json > safety-output.json
+          docker run --rm -v $(pwd):/src hysnsec/safety check -r requirements.txt –json > safety-report.json
 
       - name: Upload safety report
         uses: actions/upload-artifact@v2
