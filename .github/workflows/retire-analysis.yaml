@@ -16,7 +16,8 @@ jobs:
         continue-on-error: true
 
       - name: Upload Retire.js report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: retire-report
           path: retire-output.json
+        if: always()

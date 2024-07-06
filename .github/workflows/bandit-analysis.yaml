@@ -20,3 +20,4 @@ jobs:
         with:
           name: bandit-report
           path: bandit-output.json
+        if: always()

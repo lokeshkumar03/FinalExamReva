@@ -30,3 +30,4 @@ jobs:
         with:
           name: safety-report
           path: safety-output.json
+        if: always()
