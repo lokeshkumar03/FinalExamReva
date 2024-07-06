@@ -8,6 +8,8 @@ jobs:
     name: Component Scanning Job
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout the Code
+        uses: actions/checkout@v4    
 
       - name: Check the Node.js Version
         run: node --version
